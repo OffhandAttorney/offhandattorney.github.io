@@ -43,7 +43,7 @@ gulp.task('scripts', function() {
     .pipe(browserSync.stream());
 });
 
-gulp.task('images', function() {
+gulp.task('images-min', function() {
   return gulp.src('../../src/**/img/*')
     .pipe(imagemin({
       progressive: true,
@@ -90,13 +90,15 @@ gulp.task('browser-sync', function() {
 gulp.task('watch', function() {
   gulp.watch('../../src/**/*.scss', ['styles']);
   gulp.watch(['../../src/js/plugins.js', '../../src/js/scripts.js'], ['scripts']);
-  gulp.watch('../../src/**/img/*', ['images', 'images-svg']);
+  //gulp.watch('../../src/**/img/*', ['images', 'images-svg']);
   gulp.watch('../../src/**/*.html').on('change', browserSync.reload);
 });
 
-gulp.task('default', ['styles', 'scripts', 'images', 'images-svg', 'browser-sync', 'watch']);
-
+// Deploy to github pages
 gulp.task('deploy', function() {
   return gulp.src("../../src/**/*")
     .pipe(deploy())
 });
+
+gulp.task('images', ['images-min', 'images-svg']);
+gulp.task('default', ['styles', 'scripts', 'browser-sync', 'watch']);
