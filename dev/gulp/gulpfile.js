@@ -8,7 +8,8 @@ var gulp = require('gulp'),
   rename = require("gulp-rename"),
   sass = require('gulp-sass'),
   svgmin = require('gulp-svgmin'),
-  uglify = require('gulp-uglify');
+  uglify = require('gulp-uglify'),
+  deploy = require('gulp-gh-pages');
 
 gulp.task('styles', function() {
   return gulp.src('../../src/**/*.scss')
@@ -94,3 +95,8 @@ gulp.task('watch', function() {
 });
 
 gulp.task('default', ['styles', 'scripts', 'images', 'images-svg', 'browser-sync', 'watch']);
+
+gulp.task('deploy', function() {
+  return gulp.src("../../src/**/*")
+    .pipe(deploy())
+});

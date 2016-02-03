@@ -4,17 +4,24 @@
     float: left;
     clear: left;
     height: 200px;
-    margin: 0;
-    padding: 0;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 20px;
     width: 250px;
+    svg {
+     margin: 0 auto;
+    }
     @include media("<desktop") {
       float: none;
       clear: both;
+      height: auto;
+      margin: 0 auto;
       text-align: center;
       width: 100%;
-      img {
-        margin: 0 auto;
-      }
+      max-width: 280px;
+    }
+    a {
+      display: block;
     }
   }
   .site-nav {
@@ -62,11 +69,25 @@
             }
           }
         }
+        svg {
+          height: 16px;
+          @include media("<desktop") {
+            height: 9px;
+          }
+          path {
+            fill: $color--gray;
+          }
+        }
         &:hover {
           a {
             color: $color--orange;
             span {
               border-color: $color--orange;
+            }
+          }
+          svg {
+            path {
+              fill: $color--orange;
             }
           }
         }
@@ -76,6 +97,11 @@
             background-color: $color--orange;
             span {
               border-color: $color--white;
+            }
+            svg {
+              path {
+                fill: $color--white;
+              }
             }
           }
         }
