@@ -97,7 +97,9 @@ gulp.task('watch', function() {
 // Deploy to github pages
 gulp.task('deploy', function() {
   return gulp.src("../../src/**/*")
-    .pipe(deploy())
+    .pipe(deploy({
+      branch: 'master'
+    }))
 });
 
 gulp.task('images', ['images-min', 'images-svg']);
