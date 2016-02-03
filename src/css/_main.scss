@@ -1,0 +1,13 @@
+.site-main {
+  & > .inner {
+    background: $color--orange;
+    padding: 30px;
+
+    #viewport {
+      iframe {
+        border: 0px solid $color--white;
+      }
+    }
+
+  }
+}

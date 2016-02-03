@@ -1,0 +1,85 @@
+.site-header {
+  overflow: hidden;
+  .site-logo {
+    float: left;
+    clear: left;
+    height: 200px;
+    margin: 0;
+    padding: 0;
+    width: 250px;
+    @include media("<desktop") {
+      float: none;
+      clear: both;
+      text-align: center;
+      width: 100%;
+      img {
+        margin: 0 auto;
+      }
+    }
+  }
+  .site-nav {
+    float: right;
+    clear: right;
+    width: calc(100% - 275px);
+    @include media("<desktop") {
+      float: none;
+      clear: both;
+      width: 100%;
+    }
+    ul {
+      &, li {
+        display: inline;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        a {
+          color: $color--gray;
+          display: block;
+          float: left;
+          height: 200px;
+          line-height: 200px;
+          padding: 0;
+          text-align: center;
+          text-decoration: none;
+          text-transform: uppercase;
+          width: 25%;
+          span {
+            border-bottom: 2px solid $color--gray;
+            display: block;
+            height: auto;
+            line-height: normal;
+            padding: 30px 10px 20px;
+          }
+          @include media("<desktop") {
+            font-size: 12px;
+            height: 100px;
+            line-height: normal;
+            padding: 0;
+            span {
+              padding: 20px 10px
+            }
+          }
+        }
+        &:hover {
+          a {
+            color: $color--orange;
+            span {
+              border-color: $color--orange;
+            }
+          }
+        }
+        &.active {
+          a {
+            color: $color--white;
+            background-color: $color--orange;
+            span {
+              border-color: $color--white;
+            }
+          }
+        }
+      }
+    }
+  }
+}

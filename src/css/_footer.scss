@@ -1,0 +1,53 @@
+.site-footer {
+  & > .inner {
+
+    .site-nav-spacer {
+      float: right;
+      clear: right;
+      width: calc(100% - 275px);
+      @include media("<desktop") {
+        float: none;
+        clear: both;
+        width: 100%;
+      }
+      ul {
+        &, li {
+          display: inline;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
+        li {
+          color: $color--black;
+          display: block;
+          float: left;
+          height: 300px;
+          line-height: 200px;
+          padding: 0;
+          text-align: center;
+          text-decoration: none;
+          text-transform: uppercase;
+          width: 25%;
+          &:hover {
+            color: $color--orange;
+          }
+          &.active {
+            color: $color--white;
+            background-color: $color--orange;
+          }
+          @include media("<desktop") {
+            font-size: 12px;
+            height: 150px;
+            line-height: 150px;
+            padding: 20px 10px;
+          }
+        }
+      }
+    }
+
+    small {
+      display: none;
+    }
+
+  }
+}
