@@ -24,13 +24,15 @@
                       margin: 0 15px;
                       width: auto;
                       max-width: calc(20% - 30px);
+                      opacity: .4;
                       img {
                           max-height: 150px;
                           width: auto;
                       }
                   }
+                  &:hover,
                   &.active {
-                      opacity: .5;
+                      opacity: 1;
                   }
               }
           }
