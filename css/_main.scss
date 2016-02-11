@@ -7,6 +7,41 @@
       iframe {
         border: 0px solid $color--white;
       }
+      &.artwork {
+          ul {
+              display: block;
+              font-size: 0;
+              width: 100%;
+              margin: 0 auto 30px;
+              padding: 0;
+              text-align: center;
+              li {
+                  display: inline;
+                  margin: 0;
+                  padding: 0;
+                  a {
+                      display: inline-block;
+                      margin: 0 15px;
+                      width: auto;
+                      max-width: calc(20% - 30px);
+                      img {
+                          max-height: 150px;
+                          width: auto;
+                      }
+                  }
+                  &.active {
+                      opacity: .5;
+                  }
+              }
+          }
+          .image {
+              text-align: center;
+              img {
+                  max-width: 100%;
+                  height: auto;
+              }
+          }
+      }
     }
 
   }
